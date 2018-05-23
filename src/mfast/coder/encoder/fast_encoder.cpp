@@ -233,7 +233,7 @@ namespace mfast
 
     if (itr != templates_map_.end()) {
       instruction = itr->second;
-      current_pmap().init(&this->strm_, instruction->segment_pmap_size());
+      current_pmap().init(&this->strm_, std::max<std::size_t>instruction->segment_pmap_size(), 1);
     }
     else {
       using namespace coder;
