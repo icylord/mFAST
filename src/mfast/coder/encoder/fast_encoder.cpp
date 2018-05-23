@@ -240,8 +240,10 @@ namespace mfast
       BOOST_THROW_EXCEPTION(fast_dynamic_error("D9") << template_id_info(template_id));
     }
 
-    if ( force_reset ||  instruction->has_reset_attribute())
+    if ( force_reset ||  instruction->has_reset_attribute()) {
+      active_message_id_ = -1;
       resetter_.reset();
+    }
 
 
     bool need_encode_template_id = (active_message_id_ != template_id);
