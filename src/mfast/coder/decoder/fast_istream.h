@@ -311,7 +311,7 @@ namespace mfast
 
     int consumed_bytes = 0;
 
-    const int max_bytes = 8*sizeof(T)/7+1;
+    const int max_bytes = 8*sizeof(int64_t)/7+1;
 
     while ( (c & 0x80) == 0 && consumed_bytes < max_bytes) {
       tmp <<= 7;
