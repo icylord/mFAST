@@ -51,9 +51,7 @@ namespace mfast {
       {
         BOOST_FOREACH(field_cref r, ref)
         {
-          if (r.present() || FieldAccessor::visit_absent ) {
             r.instruction()->accept(*this, const_cast<value_storage*>(field_cref_core_access::storage_of(r)));
-          }
         }
       }
 
